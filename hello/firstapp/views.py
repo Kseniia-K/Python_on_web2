@@ -40,12 +40,7 @@
 #     return HttpResponse(output)
 
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
-
+from django.template.response import TemplateResponse
+from django.shortcuts import render
 def index(request):
-    return HttpResponse("Index")
-def about(request):
-    return HttpResponse("About")
-def contact(request):
-    return HttpResponseRedirect("/about")
-def details(request):
-    return HttpResponsePermanentRedirect("/")
+    return render(request, "firstapp/home.html")
