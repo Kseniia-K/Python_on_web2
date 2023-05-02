@@ -41,6 +41,10 @@
 
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.template.response import TemplateResponse
+from django.http import *
 from django.shortcuts import render
+
+
 def index(request):
-    return render(request, "firstapp/home.html")
+    cat = ["Ноутбуки", "Принтеры", "Сканеры", "Диски", "Шнуры"]
+    return render(request, "firstapp/index.html", context={"cat": cat})
